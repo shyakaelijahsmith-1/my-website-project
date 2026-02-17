@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talential | Upload Challenge</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 id="talentTitle">Your Talent</h1>
+        <p>Upload your performance & complete challenges</p>
+    </header>
+
+    <main class="content">
+        <h2>Upload Your Talent Video</h2>
+
+        <form class="talent-form">
+            <label>Upload video or image:</label>
+            <input type="file" accept="video/*,image/*" required>
+
+            <label>Describe your performance:</label>
+            <textarea placeholder="Tell us about your skills..." rows="4"></textarea>
+
+            <button type="submit">Submit Challenge</button>
+        </form>
+
+        <hr style="margin: 25px 0; opacity: 0.3;">
+
+        <h2>Current Challenges</h2>
+        <ul style="text-align:left; line-height:1.8;">
+            <li>🔥 Perform a 30-second skill showcase</li>
+            <li>🏆 Upload your best drill or routine</li>
+            <li>🎯 Show consistency & discipline</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>© Talential Foundation</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const talent = params.get("talent");
+
+        if (talent) {
+            document.getElementById("talentTitle").textContent = talent + " Challenge";
+        }
+    </script>
+
+</body>
+</html>

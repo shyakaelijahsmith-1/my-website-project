@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talential Community Dashboard</title>
+<link rel="icon" type="image/png" href="talential1.PNG">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<header>
+<h1>Talential Community Dashboard</h1>
+<p>Upload • Interact • Add your talent to the community</p>
+</header>
+
+<div class="container">
+
+<!-- Upload Panel -->
+
+<div class="panel upload">
+<h2>Submit Challenge</h2>
+
+<input type="file">
+<textarea id="desc" placeholder="Describe your performance..."></textarea>
+
+<button onclick="submitTalent()">Upload Talent</button>
+</div>
+
+<!-- Community Feed -->
+
+<div class="panel">
+<h2>Community Feed</h2>
+<div id="feed"></div>
+</div>
+
+<!-- AI Coach -->
+
+<div class="panel">
+<h2>AI Performance Coach</h2>
+
+<div class="ai-box" id="aiOutput">
+Upload something to receive AI suggestions…
+</div>
+
+<button onclick="generateAI()">Analyze Performance</button>
+</div>
+
+</div>
+
+<script>
+
+let posts = [];
+
+function submitTalent(){
+
+let desc = document.getElementById("desc").value;
+
+if(!desc){
+alert("Describe your performance first!");
+return;
+}
+
+posts.unshift({
+text:desc,
+likes:0,
+comments:0
+});
+
+renderFeed();
+
+document.getElementById("desc").value="";
+
+generateAI();
+}
+
+function renderFeed(){
+
+let feed = document.getElementById("feed");
+feed.innerHTML="";
+
+posts.forEach((post,i)=>{
+
+feed.innerHTML += `
+<div class="feed-item">
+${post.text}
+
+<div class="feed-actions">
+<span onclick="likePost(${i})">❤️ ${post.likes}</span>
+<span onclick="commentPost(${i})">💬 ${post.comments}</span>
+</div>
+</div>`;
+});
+}
+
+function likePost(i){
+posts[i].likes++;
+renderFeed();
+}
+
+function commentPost(i){
+posts[i].comments++;
+renderFeed();
+}
+
+function generateAI(){
+
+let tips = [
+
+"Great consistency — try adding speed variation.",
+"Improve posture for stronger presence.",
+"Add creativity to stand out.",
+"Work on smoother transitions.",
+"Challenge unlocked: 45-second advanced combo!"
+];
+
+let tip = tips[Math.floor(Math.random()*tips.length)];
+
+document.getElementById("aiOutput").innerText = tip;
+}
+
+</script>
+
+</body>
+</html>

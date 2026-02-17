@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="icon" type="image/png" href="talential1.PNG" style="width: 10; height: 20;">
+    <link rel="stylesheet" href="login page.css">
+</head>
+<body>
+
+    <form id="loginform">
+        <div class="container">
+            <div class="header">
+                <h1>Login</h1>
+                <p>Welcome back to Talential Foundation</p>
+            </div>
+            <div class="body">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" onclick="togglePassword()"> Show password
+                    </label>
+                </div>
+                <button type="button" onclick="window.location.href = 'talential2.html';">LOGIN</button>
+                <p class="links">
+                    <a href="forgot password.html">Forgot password?</a><br>
+                    Don’t have an account? <a href="sign up.html">Sign up</a>
+                </p>
+                <p id="message"></p>
+
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talential | Welcome</title>
+    <link rel="stylesheet" href="talential2.css">
+</head>
+<body>
+    <header class="header">
+        <img src="talential3.PNG" alt="Talential Logo">
+        <h1>WELCOME TO TALENTIAL 📍</h1>
+        <p>We grow talents and turn dreams into reality</p><br>
+        <a href="admin.html" style="display:none" id="adminLink">Admin</a>
+      </header> 
+
+    <main class="content">
+        <h2>Select Your Talent</h2>
+        <form class="talent-form" id="talentForm">
+            <label for="talent">Choose a talent:</label>
+            <select id="talent" required>
+                <option value="">-- Select talent --</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Volleyball">Volleyball</option>
+                <option value="Football">Football</option>
+                <option value="Karate">Karate</option>
+                <option value="Gymnastics">Gymnastics</option>
+            </select>
+            <button type="submit">Continue</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© Talential Foundation</p>
+    </footer>
+
+    <script>
+        document.getElementById("talentForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const talent = document.getElementById("talent").value;
+
+            if (talent === "") {
+                alert("Please select a talent");
+                return;
+            }
+
+            // Redirect with selected talent
+            window.location.href = "upload.html?talent=" + encodeURIComponent(talent);
+        });
+    </script>
+</body>
+</html>

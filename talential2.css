@@ -1,0 +1,159 @@
+/* ===== RESET & GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== HEADER ===== */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeDown 1s ease;
+}
+
+.header img {
+    width: 110px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #d0eaff;
+}
+
+/* ===== MAIN CONTENT CARD ===== */
+.content {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 35px 30px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    animation: fadeUp 1s ease;
+}
+
+.content h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* ===== FORM ===== */
+.talent-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.talent-form label {
+    font-size: 0.95rem;
+    color: #e6f4ff;
+}
+
+/* ===== SELECT ===== */
+.talent-form select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.talent-form select:hover,
+.talent-form select:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(0, 174, 255, 0.35);
+}
+
+/* ===== BUTTON ===== */
+.talent-form button {
+    margin-top: 10px;
+    padding: 13px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    box-shadow: 0 10px 25px rgba(0, 114, 255, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.talent-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 35px rgba(0, 114, 255, 0.6);
+}
+
+.talent-form button:active {
+    transform: scale(0.97);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.85rem;
+    color: #bcdcff;
+    opacity: 0.85;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .content {
+        padding: 28px 22px;
+    }
+}
